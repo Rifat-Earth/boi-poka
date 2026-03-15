@@ -12,8 +12,7 @@ const Banner = () => {
                 <div>
                     <h1 className="text-5xl font-bold">Books Office News!</h1>
                     <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                        quasi. In deleniti eaque aut repudiandae et a id nisi.
+                       Welcome to our Book Store! We are passionate about books and love sharing knowledge with our community.
                     </p>
                     <button className="btn btn-primary">Get Started</button>
                 </div>

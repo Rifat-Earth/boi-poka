@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { addToStoredDB } from '../../utility/addToDB';
 
 const BookDetails = () => {
     const { bookId } = useParams();
@@ -11,21 +12,29 @@ const BookDetails = () => {
 
     const { bookName, author,  image,review } = detailsData
 
+    const handleMarkAsRead = id =>{
+        addToStoredDB(id)
+    }
+
+    const handleWishList = id =>{
+        addToStoredDB(id)
+    }
+
 
     return (
         <div className="card card-side max-w-6xl py-10 flex flex-col md:flex-row  mx-auto bg-base-100 shadow-sm">
-            <figure>
-                <img
+            <figure className='w-full '>
+                <img className=''
                     src={image}
                     alt="book image" />
             </figure>
             <div className="card-body">
                 <h1 className=' text-lg'><span className='font-bold text-lg'>Name: </span>{bookName}</h1>
                 <h2 className="card-title">{author}</h2>
-                <p className='font-stretch-50%'>{review}</p>
+                <p className=''>{review}</p>
                 <div className="card-actions justify-start">
-                    <button className="btn btn-primary">Mark as Read</button>
-                     <button className="btn btn-primary">Add to Wish List</button>
+                    <button onClick={()=>handleMarkAsRead(id)} className="btn btn-primary">Mark as Read</button>
+                     <button onClick={()=>handleWishList(id)} className="btn btn-primary">Add to Wish List</button>
                 </div>
             </div>
         </div>
